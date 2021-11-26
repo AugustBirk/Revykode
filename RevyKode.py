@@ -184,9 +184,11 @@ sche = Schedule(roles_csv='Roles.csv',
 				no_participants=41)
 
 
+# Example, finding the optimal distribution of 6 sketches with 4 rooms available:
 some_sketches = ['Introsang','Karrieredag','Mappedyr', 'ff Enheder', 'Ninjasangen', 'Krænkevise']
 
-opt_dist = sche.optimal_distribution(some_sketches, available_rooms=4)
+opt_dists = sche.optimal_distribution(some_sketches, available_rooms=4)
 
-print(opt_dist)
-
+print('Given the participants, these sketches can work simultaneously:')
+for an_optimal_distribution in opt_dists:
+	print(an_optimal_distribution)
